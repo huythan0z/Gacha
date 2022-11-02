@@ -10,13 +10,13 @@ using Random = UnityEngine.Random;
 
 public class Rotate2D : MonoBehaviour
 {
-    float speed = 189.243f;
+    //float speed = 189.243f;
+    float speed = 84.8f;
     bool rotate = false;
     [SerializeField] Button btnSpin;
     public Text txtResult;
     int degreeRandom;
     int round = 0;
-
     void Start()
     {
         degreeRandom = Random.Range(0, 359);
@@ -37,13 +37,13 @@ public class Rotate2D : MonoBehaviour
         if (rotate == true)
         {
             transform.Rotate(Vector3.forward * speed * Time.deltaTime);
-            if (degree >= degreeRandom && degree <= degreeRandom + 5)
+            if (degree >= degreeRandom && degree <= degreeRandom + 1)
             {
                 round = round + 1;
             }
-            if (round > 3)
+            if (round > 2)
             {
-                speed -= 1.0f; 
+                speed -= 0.2f; 
             }
             if (speed <= 0)
             {
